@@ -27,3 +27,5 @@ Route::get('ticket', function () {
     return view('pages.ticket');
 });
 Route::put('ticket/store', [TicketController::class, 'store']);
+Route::get('admin/ticket', [TicketController::class, 'adminTicket']);
+Route::get('admin/ticket/detail/{id}', [TicketController::class, 'detailAdminTicket']);
