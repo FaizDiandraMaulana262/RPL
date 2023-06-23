@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Ticket;
-use App\Models\Status;
 use App\Models\Priority;
+use App\Models\Status;
+use App\Models\Ticket;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Psy\TabCompletion\Matcher\FunctionsMatcher;
 
 class TicketController extends Controller
 {

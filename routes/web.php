@@ -18,14 +18,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages.landing');
 });
-Route::get('knowledge', [TicketController::class, 'knowledgeView']);
-Route::get('detail/{id}', [TicketController::class, 'detail']);
-Route::get('login', function () {
-    return view('pages.login');
-});
+Route::get('login', [UserController::class, 'login'])->name('login');
+Route::post('login', [UserController::class, 'authenticate']);
+Route::post('/logout', [UserController::class, 'logout']);
+
 Route::get('ticket', function () {
     return view('pages.ticket');
 });
+
+
+Route::get('knowledge', [TicketController::class, 'knowledgeView']);
+Route::get('detail/{id}', [TicketController::class, 'detail']);
 Route::put('ticket/store', [TicketController::class, 'store']);
-Route::get('admin/ticket', [TicketController::class, 'adminTicket']);
-Route::get('admin/ticket/detail/{id}', [TicketController::class, 'detailAdminTicket']);
+
+Route::middleware('auth')->group(function() {
+    Route::get('admin/ticket', [TicketController::class, 'adminTicket']);
+    Route::get('admin/ticket/detail/{id}', [TicketController::class, 'detailAdminTicket']);
+});
+
