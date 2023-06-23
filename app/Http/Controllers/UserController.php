@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -24,7 +25,14 @@ class UserController extends Controller
         ];
 
         if(Auth::attempt($data)) {
-            return redirect('/admin/ticket');
+            $check = DB::table('users')->where('users.email', $data['email'])->get();
+            
+            if ($check[0]->role == 'Admin') {
+                return redirect('/admin/ticket');
+            }
+            else{
+                return redirect('/ticket');
+            }
         }
 
         $request->session()->flash('error', 'Email atau password salah!');

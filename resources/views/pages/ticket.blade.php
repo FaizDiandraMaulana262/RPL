@@ -3,13 +3,12 @@
 @section('layout')
 <x-navbar />
 <div class="container mt-5">
-    <form action="ticket/store" method="POST">
+    <form action="ticket/store/{{auth()->user()->id}}" method="POST">
         {{ csrf_field() }}
         @method('PUT')
         <div class="mb-3">
             <label class="form-label">Kategori</label>
             <select name="kategori" class="form-select" aria-label="Default select example" required>
-                <option selected>=== Pilih Kategori ===</option>
                 <option value="Sarana dan Prasarana">Sarana dan Prasarana</option>
                 <option value="Jaringan Kampus">Jaringan Kampus</option>
                 <option value="Infrastruktur">Infrastruktur</option>
