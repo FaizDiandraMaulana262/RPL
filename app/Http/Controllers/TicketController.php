@@ -10,6 +10,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+use function PHPUnit\Framework\isNull;
+
 class TicketController extends Controller
 {
 
@@ -41,10 +43,18 @@ class TicketController extends Controller
         return view('pages.ticket');
     }
 
-    public function adminTicket()
+    public function adminTicket(Request $req)
     {
-        $tickets = Ticket::get();
-        return view('pages.adminTicket', compact('tickets'));
+        $statues = Status::get();
+        $priorities = Priority::get();
+
+        $cok = empty($req);
+        if (count($req->all()) == 0) {
+            $tickets = Ticket::get();
+        } else {
+            $tickets = Ticket::where('category', $req->category)->where('status_id', $req->status)->where('priority_id', $req->priority)->get();
+            return view('pages.adminTicket', compact('tickets', 'statues', 'priorities'));
+        }
     }
 
     public function detailAdminTicket(Request $req, $id)
@@ -74,9 +84,7 @@ class TicketController extends Controller
 
         if ($check[0]->role == 'User') {
             return redirect('detail/' . $id);
-        }
-        elseif($check[0]->role == 'Admin'){
-
+        } elseif ($check[0]->role == 'Admin') {
         }
 
         return redirect('admin/ticket/detail/' . $id);
