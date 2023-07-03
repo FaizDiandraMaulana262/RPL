@@ -10,8 +10,6 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-use function PHPUnit\Framework\isNull;
-
 class TicketController extends Controller
 {
 
@@ -25,7 +23,6 @@ class TicketController extends Controller
     {
         $details = DB::table('tickets')->join('ticket_responses', 'tickets.id', '=', 'ticket_responses.ticket_id')->join('users', 'users.id', '=', 'tickets.user_id')->join('statues', 'statues.id', '=', 'tickets.status_id')->select('tickets.*', 'users.nama', 'statues.title as status')->where('tickets.id', $id)->get();
         $responders = DB::table('tickets')->join('ticket_responses', 'tickets.id', '=', 'ticket_responses.ticket_id')->join('users', 'users.id', '=', 'ticket_responses.admin_id')->select('users.nama', 'ticket_responses.*')->where('tickets.id', $id)->get();
-        // return $details;
         return view('pages.detail', compact('details', 'responders'));
     }
 
@@ -53,8 +50,9 @@ class TicketController extends Controller
             $tickets = Ticket::get();
         } else {
             $tickets = Ticket::where('category', $req->category)->where('status_id', $req->status)->where('priority_id', $req->priority)->get();
-            return view('pages.adminTicket', compact('tickets', 'statues', 'priorities'));
         }
+
+        return view('pages.adminTicket', compact('tickets', 'statues', 'priorities'));
     }
 
     public function detailAdminTicket(Request $req, $id)
@@ -92,9 +90,7 @@ class TicketController extends Controller
 
     public function yourTicket(Request $req, $id)
     {
-        // return $id;
         $tickets = Ticket::join('priorities', 'priorities.id', '=', 'tickets.priority_id')->join('statues', 'statues.id', '=', 'tickets.status_id')->where('user_id', $id)->select('tickets.*', 'priorities.title as priority', 'statues.title as status')->get();
-        // return $tickets;
         return view('pages.userTicket', compact('tickets'));
     }
 }

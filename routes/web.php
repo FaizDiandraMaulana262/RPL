@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 Route::get('login', [UserController::class, 'login'])->name('login');
 Route::post('login', [UserController::class, 'authenticate']);
-Route::post('/logout', [UserController::class, 'logout']);
+Route::post('logout', [UserController::class, 'logout']);
 
 Route::get('knowledge', [TicketController::class, 'knowledgeView']);
 Route::get('detail/{id}', [TicketController::class, 'detail']);
