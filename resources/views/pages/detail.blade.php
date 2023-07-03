@@ -5,38 +5,40 @@
     <div class="container">
         <div class="row mt-3">
             {{-- @foreach ($details as $detail) --}}
-                <x-card>
-                    <div class="mt-2">
-                        <h1>{{ $details[0]->title }}</h1>
-                        <hr>
+            <x-card>
+                <div class="mt-2">
+                    <h1>{{ $details[0]->title }}</h1>
+                    <hr>
+                </div>
+                <div class="mt-3">
+                    <b>
+                        {{ $details[0]->nama }}
+                    </b>
+                    <p>
+                        {{ $details[0]->description }}
+                    </p>
+                </div>
+                <div class="mt-2">
+                    <b>{{ $details[0]->status }}</b>
+                </div>
+                <div class="mt-1">
+                    <p>{{ $details[0]->created_at }}</p>
+                </div>
+                @foreach ($responders as $respoder)
+                    <div class="col mt-3">
+                        <x-card>
+                            <div class="mt-2">
+                                <b>{{ $respoder->nama }}</b>
+                                <p>{{ $respoder->message }}</p>
+                            </div>
+                            <p>{{ $respoder->created_at }}</p>
+                        </x-card>
                     </div>
-                    <div class="mt-3">
-                        <b>
-                            {{ $details[0]->nama }}
-                        </b>
-                        <p>
-                            {{ $details[0]->description }}
-                        </p>
-                    </div>
-                    <div class="mt-2">
-                        <b>{{ $details[0]->status }}</b>
-                    </div>
-                    <div class="mt-1">
-                        <p>{{ $details[0]->created_at }}</p>
-                    </div>
-                    @foreach ($responders as $respoder)
-                        <div class="col mt-3">
-                            <x-card>
-                                <div class="mt-2">
-                                    <b>{{ $respoder->nama }}</b>
-                                    <p>{{ $respoder->message }}</p>
-                                </div>
-                                <p>{{ $respoder->created_at }}</p>
-                            </x-card>
-                        </div>
-                    @endforeach
-                </x-card>
+                @endforeach
+            </x-card>
 
+            @guest
+            @else
                 @if ($details[0]->user_id == auth()->user()->id)
                     <div class="row mb-3">
                         <form action="/admin/ticket/update/{{ $details[0]->id }}/{{ auth()->user()->id }}" method="POST">
@@ -63,6 +65,9 @@
                         </form>
                     </div>
                 @endif
+            @endguest
+
+
             {{-- @endforeach --}}
         </div>
     </div>
