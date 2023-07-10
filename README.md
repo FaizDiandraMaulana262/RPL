@@ -1,66 +1,98 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Software Design Documentation
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Introduction
 
-## About Laravel
+### Overview Document
+Dokumen ini menjelaskan desain perangkat lunak Helpdesk yang dikembangkan untuk Universitas Muhammadiyah Malang. Helpdesk adalah sistem yang digunakan untuk menerima, melacak, dan menyelesaikan tiket atau permintaan layanan dari pengguna. Software ini bertujuan untuk meningkatkan efisiensi dan kecepatan dalam menangani permintaan layanan dari mahasiswa, staf, dan pengguna lainnya di universitas.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Scope
+Sistem Helpdesk akan mencakup semua proses dan fitur yang diperlukan untuk mendukung layanan helpdesk yang efektif dan efisien di Universitas Muhammadiyah Malang.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## System Description
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Overview
 
-## Learning Laravel
+Helpdesk Universitas Muhammadiyah Malang adalah sebuah sistem yang dibuat untuk menerima laporan, saran, kritikan, pertanyaan, dan sebagainya. khususnya untuk seluruh masyarakat Universitas Muhammadiyah Malang secara cepat dan tepat. Selain itu dengan adanya sistem ini diharapkan dapat membuat laporan lebih tertata dengan baik.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Functions and Features
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- Pendaftaran Pengguna : 
+Pengguna dapat mendaftar dan membuat akun untuk mengakses sistem Helpdesk.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Pembuatan Tiket : 
+Pengguna dapat membuat tiket bantuan dengan mengisi informasi terkait masalah atau permintaan yang mereka hadapi.
 
-## Laravel Sponsors
+- Pelacakan Tiket : 
+Pengguna dapat melacak status dan perkembangan tiket bantuan yang mereka buat.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- Penyelesaian Tiket : 
+Teknisi dapat menangani tiket bantuan, menghubungi pengguna untuk memberikan solusi, dan menandai tiket sebagai selesai setelah masalah teratasi.
 
-### Premium Partners
+### Benefits
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- Meningkatkan efisiensi dalam menangani tiket bantuan dan memberikan solusi yang cepat kepada pengguna.
 
-## Contributing
+- Memungkinkan pengguna untuk melacak status tiket bantuan mereka secara real-time.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Memiliki basis data tiket bantuan yang dapat digunakan untuk analisis performa dan perbaikan proses helpdesk.
 
-## Code of Conduct
+### Scope 
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- Sistem Helpdesk hanya tersedia untuk mahasiswa, dosen, dan staf administrasi di Universitas Muhammadiyah Malang.
 
-## Security Vulnerabilities
+- Sistem tidak mencakup fitur integrasi dengan sistem lain di luar lingkungan universitas.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## System Requirements
 
-## License
+### Hardware Requirements
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Menyediakan kapasitas penyimpanan yang cukup, memori yang memadai, dan kecepatan pemrosesan yang sesuai untuk menangani beban kerja sistem.
+
+- Komputer atau perangkat lain yang dapat mengakses sistem Helpdesk melalui web browser dengan spesifikasi minimum tertentu.
+
+### Software Requirements
+
+- Mendukung sistem operasi yang kompatibel dengan aplikasi web Helpdesk, seperti Windows, Linux, atau macOS.
+
+- Membutuhkan database server yang mendukung sistem manajemen basis data seperti MySQL.
+
+- Kompatibel dengan berbagai browser web umum seperti Google Chrome, Mozilla Firefox, atau Microsoft Edge.
+
+### Network Requirements
+
+- Sistem Helpdesk membutuhkan koneksi internet yang stabil untuk mengaksesnya dari lokasi yang berbeda.
+
+- Memerlukan jaringan internal yang terhubung dengan server dan klien untuk komunikasi data yang lancar.
+
+### Functional Requirements 
+
+- Sistem harus dapat mengelola tiket pengguna yang mencakup pembuatan, pelacakan, pembaruan, dan penyelesaian tiket.
+
+- Mendukung alur kerja yang didefinisikan secara fleksibel untuk menangani permintaan bantuan atau masalah dari pengguna.
+
+- Mencatat dan melacak riwayat aktivitas tiket.
+
+### Security Requirements
+
+- Mengimplementasikan mekanisme otentikasi dan otorisasi yang membatasi akses ke sistem dan data hanya untuk pengguna yang sah.
+
+- Melindungi data pengguna dan informasi sensitif lainnya melalui metode enkripsi dan kebijakan keamanan yang sesuai.
+
+## Architectural Strategies
+
+### Technologies
+
+Kami menggunakan framework laravel dalam pembuatan sistem helpdesk berbasis web service.
+
+### Database
+
+- MySQL
+
+### Programming Language
+
+- PHP
+
+## Closure
+
+### Conclution
+Sebagai kesimpulan, dokumen ini memberikan gambaran menyeluruh tentang desain perangkat lunak untuk sistem Helpdesk di Universitas Muhammadiyah Malang. Pertimbangan desain, strategi arsitektur, arsitektur sistem, persyaratan, fungsi dan fitur, serta keuntungan dan nilai tambah telah dibahas secara mendetail. Dengan mengikuti solusi desain yang diusulkan, kami bertujuan untuk menciptakan sistem Helpdesk yang efisien dan mudah digunakan yang memenuhi kebutuhan khusus universitas. Kami yakin bahwa desain ini akan sangat meningkatkan layanan dukungan yang diberikan kepada komunitas universitas dan meningkatkan efisiensi operasional secara keseluruhan. Terima kasih atas perhatian terhadap dokumen desain perangkat lunak ini, dan kami berharap untuk berhasilnya implementasi sistem Helpdesk.
