@@ -57,17 +57,17 @@ Teknisi dapat menangani tiket bantuan, menghubungi pengguna untuk memberikan sol
 |----|---|
 | 1  | Terdapat form pencarian atau pertanyaan. |
 | 2  | Memilih topik permasalahan yang dialami oleh customer. |
-| 3  | Menampilan beberapa knowledge base atau pertanyaan yang populer atau yang |  || 1 sering ditanyakan. |
+| 3  | Menampilan beberapa knowledge base atau pertanyaan yang populer atau yang sering ditanyakan. |
 | 4  | Customer service dapat memproses tiket atau pertanyaan dari customer. |
 | 5  | Di beberapa helpdesk terdapat fitur live chat. |
 | 6  | Customer dapat memesan tiket pada sistem. |
-| 7  | Customer dapat melihat detail dari respon tiket yang diberikan pada customer | 1 service |
-| 8  | Customer dapat merespon tanggapan customer service |
-| 9  | Customer dapat melakukan open atau closed ticket |
-| 10 | Customer Service dapat melihat detail dari respon tiket yang diberikan pada   | 1 customer |
-| 11 | Customer Service dapat merespon tanggapan customer |
-| 12 | Customer Service dapat melakukan closed ticket |
-| 13 | Customer Service dapat memberikan prioritas pada tiket |
+| 7  | Customer dapat melihat detail dari respon tiket yang diberikan pada customer service. |
+| 8  | Customer dapat merespon tanggapan customer service. |
+| 9  | Customer dapat melakukan open atau closed ticket. |
+| 10 | Customer Service dapat melihat detail dari respon tiket yang diberikan pada customer. |
+| 11 | Customer Service dapat merespon tanggapan customer. |
+| 12 | Customer Service dapat melakukan closed ticket. |
+| 13 | Customer Service dapat memberikan prioritas pada tiket. |
 
 #### Non Fungsional
 | No |Kebutuhan |
@@ -76,9 +76,9 @@ Teknisi dapat menangani tiket bantuan, menghubungi pengguna untuk memberikan sol
 | 2 | Tampilan halaman yang mudah dipahami dan dengan desain yang simpel. |
 | 3 | Terdapat sebuah infografis tentang prosedur pada helpdesk. |
 | 4 | Sistem harus mampu menangani beban pengguna yang tinggi dengan waktu respons yang cepat. |
-| 5 | Sistem harus memiliki mekanisme keamanan yang kuat untuk melindungi data pengguna dan |  |transaksi. |
-| 6 | Sistem harus mudah diubah atau ditingkatkan untuk menangani pertumbuhan pengguna yang  |besar | di masa depan. |
-| 7 | Sistem harus tersedia dan beroperasi sepanjang waktu, dengan minimal waktu downtime yang  |direncanakan.
+| 5 | Sistem harus memiliki mekanisme keamanan yang kuat untuk melindungi data pengguna dan transaksi. |
+| 6 | Sistem harus mudah diubah atau ditingkatkan untuk menangani pertumbuhan pengguna yang besar di masa depan. |
+| 7 | Sistem harus tersedia dan beroperasi sepanjang waktu, dengan minimal waktu downtime yang direncanakan. |
 
 
 ### Network Requirements
