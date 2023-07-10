@@ -69,7 +69,7 @@ Teknisi dapat menangani tiket bantuan, menghubungi pengguna untuk memberikan sol
 | 12 | Customer Service dapat melakukan closed ticket |
 | 13 | Customer Service dapat memberikan prioritas pada tiket |
 
-#### Non Funsional
+#### Non Fungsional
 | No |Kebutuhan |
 |----|----------|
 | 1 | Menampilkan logo perusahaan atau instansi. |
